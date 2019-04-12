@@ -1,0 +1,8 @@
+Lab 2: Scheduler
+
+
+Change the scheduler from a simple round-robin to a priority scheduler. Add a priority value to each process (taking a range between 0 to 31). The range does not matter, it is just a proof of concept. When scheduling from the ready list you will always schedule the highest priority thread/process first.
+
+Add a system call to change the priority of a process. A process can change its priority at any time. If the priority becomes lower than any process on the ready list, you must switch to that process.
+
+To avoid starvation, implement aging of priority. If a process waits increase its priority. When it runs, decrease it.

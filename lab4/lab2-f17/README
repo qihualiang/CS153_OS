@@ -1,0 +1,5 @@
+Lab 4: Advanced Memory management (shared memory)
+
+Implement support to enable two processes to share a memory page. This is implemented by having an entry in both process page tables point to the same physical page.
+
+

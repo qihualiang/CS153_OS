@@ -1,0 +1,9 @@
+      maxPriority = p->priority;
+      maxP = p;
+      for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+        if(p->state == RUNNABLE && p->priority > maxPriority){
+          maxPriority = p->priority;
+          maxP = p;
+        }
+      }
+

@@ -1,0 +1,25 @@
+Lab 3: Memory management
+
+
+Part 1: Changing memory layout
+In xv6, the VM system uses a simple two-level page table.
+
+The xv6 address space is currently set up like this:
+
+code
+stack (fixed-sized, one page)
+heap (grows towards the high-end of the address space)
+
+In this part of the xv6 project, rearrange the address space to look more like Linux:
+
+code
+heap (grows towards the high-end of the address space)
+... (gap)
+stack (at end of address space; grows backwards)
+
+
+Part 2: Growing the Stack
+
+automatically growing the stack backwards when needed. Getting this to work will make you into a kernel boss, and also get you those last 10% of credit. Briefly, here is what you need to do. When the stack grows beyond its allocated page(s) it will cause a page fault because it is accessing an unmapped page. If you look in traps.h, this trap is T_PGFLT which is currently not handled in our trap handler in trap.c. This means that it goes to the default handling of unknown traps, and causes a kernel panic.
+
+
